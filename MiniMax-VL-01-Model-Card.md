@@ -1,5 +1,9 @@
 <div align="center">
-  <img src="figures/MiniMaxLogo.png" width="60%" alt="MiniMax-Text-01" />
+  <picture>
+    <source srcset="figures/MiniMaxLogo-Dark.png" media="(prefers-color-scheme: dark)">
+      <img src="figures/MiniMaxLogo-Light.png" width="60%" alt="MiniMax-VL-01">
+    </source>
+  </picture>
 </div>
 <hr>
 
