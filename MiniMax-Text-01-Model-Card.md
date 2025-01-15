@@ -139,7 +139,7 @@ Here we provide a simple example of loading the tokenizer and model to generate 
 from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig, QuantoConfig, GenerationConfig
 
 # load hf config
-hf_config = AutoConfig.from_pretrained("MiniMax-Text-01", trust_remote_code=True)
+hf_config = AutoConfig.from_pretrained("MiniMaxAI/MiniMax-Text-01", trust_remote_code=True)
 
 # quantization config, int8 is recommended
 quantization_config =  QuantoConfig(
@@ -165,7 +165,7 @@ for i in range(world_size):
         device_map[f'model.layers.{i * layers_per_device + j}'] = f'cuda:{i}'
 
 # load tokenizer
-tokenizer = AutoTokenizer.from_pretrained("MiniMax-Text-01")
+tokenizer = AutoTokenizer.from_pretrained("MiniMaxAI/MiniMax-Text-01")
 prompt = "Hello!"
 messages = [
     {"role": "system", "content": [{"type": "text", "text": "You are a helpful assistant created by MiniMax based on MiniMax-Text-01 model."}]},
@@ -181,7 +181,7 @@ model_inputs = tokenizer(text, return_tensors="pt").to("cuda")
 
 # load bfloat16 model, move to device, and apply quantization
 quantized_model = AutoModelForCausalLM.from_pretrained(
-    "MiniMax-Text-01",
+    "MiniMaxAI/MiniMax-Text-01",
     torch_dtype="bfloat16",
     device_map=device_map,
     quantization_config=quantization_config,

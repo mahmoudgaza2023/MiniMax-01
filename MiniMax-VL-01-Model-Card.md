@@ -78,7 +78,7 @@ import os
 from PIL import Image
 
 # load hf config
-hf_config = AutoConfig.from_pretrained("MiniMax-VL-01", trust_remote_code=True)
+hf_config = AutoConfig.from_pretrained("MiniMaxAI/MiniMax-VL-01", trust_remote_code=True)
 
 # quantization config, int8 is recommended
 quantization_config =  QuantoConfig(
@@ -120,7 +120,7 @@ for i in range(world_size):
         device_map[f'language_model.model.layers.{i * layers_per_device + j}'] = f'cuda:{i}'
 
 # load processor
-processor = AutoProcessor.from_pretrained("MiniMax-VL-01", trust_remote_code=True)
+processor = AutoProcessor.from_pretrained("MiniMaxAI/MiniMax-VL-01", trust_remote_code=True)
 messages = [
     {"role": "system", "content": [{"type": "text", "text": "You are a helpful assistant created by MiniMax based on MiniMax-VL-01 model."}]},
     {"role": "user", "content": [{"type": "image", "image": "placeholder"},{"type": "text", "text": "Describe this image."}]},
@@ -134,7 +134,7 @@ model_inputs = processor(images=[raw_image], text=prompt, return_tensors='pt').t
 
 # load bfloat16 model, move to device, and apply quantization
 quantized_model = AutoModelForCausalLM.from_pretrained(
-    "MiniMax-VL-01",
+    "MiniMaxAI/MiniMax-VL-01",
     torch_dtype="bfloat16",
     device_map=device_map,
     quantization_config=quantization_config,
