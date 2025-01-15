@@ -33,14 +33,18 @@
 </div>
 
 
-# MiniMax-Text-01
+# MiniMax-01
 
 ## 1. Introduction
-
-MiniMax-Text-01 is a powerful language model with 456 billion total parameters, of which 45.9 billion are activated per token. To better unlock the long context capabilities of the model, MiniMax-Text-01 adopts a hybrid architecture that combines Lightning Attention, Softmax Attention and Mixture-of-Experts (MoE). Leveraging advanced parallel strategies and innovative compute-communication overlap methods—such as Linear Attention Sequence Parallelism Plus (LASP+), varlen ring attention, Expert Tensor Parallel (ETP), etc., MiniMax-Text-01's training context length is extended to 1 million tokens, and it can handle a context of up to 4 million tokens during the inference. On various academic benchmarks, MiniMax-Text-01 also demonstrates the performance of a top-tier model.
+We are delighted to introduce two remarkable models, **MiniMax-Text-01** and **MiniMax-VL-01**.
+MiniMax-Text-01 is a powerful language model boasting 456 billion total parameters, with 45.9 billion activated per token. To unlock its long-context capabilities, it adopts a hybrid architecture integrating Lightning Attention, Softmax Attention, and Mixture-of-Experts (MoE). Leveraging advanced parallel strategies like Linear Attention Sequence Parallelism Plus (LASP+), varlen ring attention, and Expert Tensor Parallel (ETP), its training context length extends to 1 million tokens, and it can handle up to 4 million tokens during inference. Consequently, MiniMax-Text-01 showcases top-tier performance on various academic benchmarks.
+Building on MiniMax-Text-01's prowess, we developed MiniMax-VL-01 for enhanced visual capabilities. It uses the “ViT-MLP-LLM” framework common in multimodal LLMs. It is initialized and trained using three key components: a 303-million-parameter Vision Transformer (ViT) for visual encoding, a randomly initialized two-layer MLP projector for image adaptation, and MiniMax-Text-01 as the base LLM. This model features a dynamic resolution mechanism. Input images are resized according to a pre-set grid, with resolutions ranging from 336×336 to 2016×2016, while maintaining a 336×336 thumbnail. The resized images are split into non - overlapping patches of the same size. These patches and the thumbnail are encoded separately and then combined to form a full image representation. As a result, MiniMax-VL-01 has achieved top-level performance on multimodal leaderboards, demonstrating its edge in complex multimodal tasks.
 
 <p align="center">
   <img width="100%" src="figures/TextBench.png">
+</p>
+<p align="center">
+  <img width="100%" src="figures/VisionBench.png">
 </p>
 
 ## 2. Model Architecture
@@ -60,9 +64,19 @@ The architecture of MiniMax-Text-01 is briefly described as follows:
 - Hidden Size: 6144
 - Vocab Size: 200,064
 
-## 3. Evaluation
+For MiniMax-VL-01, the additional ViT architecture details is as follows:
+- Total Parameters: 303M
+- Number of layers: 24
+- Patch size: 14
+- Hidden size: 1024
+- FFN hidden size: 4096
+- Number of heads: 16
+- Attention head dimension: 64
 
-### Core Academic Benchmarks
+## 3. Evaluation
+### Text Benchmarks
+
+#### Core Academic Benchmarks
 
 | **Tasks**                     | **GPT-4o (11-20)** | **Claude-3.5-Sonnet (10-22)** | **Gemini-1.5-Pro (002)** | **Gemini-2.0-Flash (exp)** | **Qwen2.5-72B-Inst.** | **DeepSeek-V3** | **Llama-3.1-405B-Inst.** | **MiniMax-Text-01** |
 |-------------------------------|--------------------|-------------------------------|--------------------------|----------------------------|-----------------------|-----------------|--------------------------|---------------------|
@@ -85,13 +99,13 @@ The architecture of MiniMax-Text-01 is briefly described as follows:
 
 <sup>*</sup> Evaluated following a _0-shot CoT_ setting.
 
-### Long Benchmarks
-#### 4M Needle In A Haystack Test
+#### Long Benchmarks
+**4M Needle In A Haystack Test**
 <p align="center">
   <img width="90%" src="figures/niah.png">
 </p>
 
-#### Ruler
+**Ruler**
 | Model | 4k | 8k | 16k | 32k | 64k | 128k | 256k | 512k | 1M |
 |-------|----|----|-----|-----|-----|------|------|------|----|
 | **GPT-4o (11-20)** | **0.970** | 0.921 | 0.890 | 0.888 | 0.884 | - | - | - | - |
@@ -100,7 +114,7 @@ The architecture of MiniMax-Text-01 is briefly described as follows:
 | **Gemini-2.0-Flash (exp)** | 0.960 | 0.960 | 0.951 | 0.957 | 0.937 | 0.860 | 0.797 | 0.709 | - |
 | **MiniMax-Text-01** | 0.963 | **0.961** | 0.953 | 0.954 | 0.943 | **0.947** | **0.945** | **0.928** | **0.910** |
 
-#### LongBench v2
+**LongBench v2**
 | **Model**                  | **overall** | **easy** | **hard** | **short** | **medium** | **long** |
 |----------------------------|-------------|----------|----------|------------|------------|----------|
 | Human                      | 53.7        | 100.0    | 25.1     | 47.2       | 59.1       | 53.7     |
@@ -117,7 +131,7 @@ The architecture of MiniMax-Text-01 is briefly described as follows:
 | Qwen2.5-72B-Inst.          | 42.1        | 42.7     | 41.8     | 45.6       | 38.1       | **44.4** |
 | **MiniMax-Text-01**        | **52.9**    | **60.9** | **47.9** | **58.9**   | **52.6**   | 43.5     |
 
-#### MTOB
+**MTOB**
 | **Context Type** | **no context** | **half book** | **full book** | **Δ half book** | **Δ full book** |
 |------------------|----------------|---------------|---------------|------------------|-----------------|
 | **eng → kalam (ChrF)** | | | | | |
@@ -135,9 +149,34 @@ The architecture of MiniMax-Text-01 is briefly described as follows:
 | Qwen-Long | 30.13 | 53.14 | 32.15 | 23.01 | 2.02 |
 | **MiniMax-Text-01** | 33.65 | 57.10 | 58.00 | 23.45 | 24.35 |
 
+### Vision Benchmarks
+
+| Tasks | GPT-4o<br>(11-20) | Claude-3.5-Sonnet (10-22) | Gemini-1.5-Pro (002) | Gemini-2.0-Flash (exp) | Qwen2-VL-72B-Inst. | InternVL2.5-78B | LLama-3.2-90B | MiniMax-VL-01 |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| **Knowledge** |  |  |  |  |  |  |  |  |
+| MMMU<sup>*</sup> | 63.5 | **72.0** | 68.4  | 70.6  | 64.5 | 66.5 | 62.1 | 68.5 |
+| MMMU-Pro<sup>*</sup>  |  54.5 | 54.7 | 50.9 | **57.0**  | 43.2 | 47.3 | 36.0 | 52.7 |
+| **Visual Q&A** |  |  |  |  |  |  |  |  |
+| ChartQA<sup>*</sup><sub>relaxed</sub> | 88.1 | 90.8 | 88.7 | 88.3 | 91.2 | 91.5 | 85.5 | **91.7** |
+| DocVQA<sup>*</sup>  | 91.1 | 94.2 | 91.5 | 92.9 | **97.1** | 96.1 | 90.1 | 96.4 |
+| OCRBench | 806 | 790 | 800 | 846  | 856 | 847 | 805 | **865** |
+| **Mathematics & Sciences** ||  |  |  |  |  |  |  |
+| AI2D<sup>*</sup> | 83.1 | 82.0 | 80.9 | 85.1 | 84.4 | **86.8** | 78.9 | 83.3 |
+| MathVista<sup>*</sup>  | 62.1 | 65.4 | 70.6 | **73.1** | 69.6 | 68.4 | 57.3 | 68.6 |
+| OlympiadBench<sub>full</sub> | 25.2 | 28.4 | 32.1 | **46.1** | 21.9 | 25.1 | 19.3 | 24.2 |
+|**Long Context**|||||
+|M-LongDoc<sub>acc</sub>| **41.4** | 31.4 | 26.2 | 31.4 | 11.6 | 19.7 | 13.9 | 32.5 |
+|**Comprehensive**|||||
+|MEGA-Bench<sub>macro</sub> | 49.4 | 51.4 | 45.9 | **53.9** | 46.8 | 45.3 | 19.9 | 47.4 |
+|**User Experience**|||||
+|In-house Benchmark | 62.3 | 47.0 | 49.2 | **72.1** | 40.6 | 34.8 | 13.6 | 56.6 |
+
+<sup>*</sup> Evaluated following a _0-shot CoT_ setting.
+
 
 ## 4. Quickstart
-Here we provide a simple example of loading the tokenizer and model to generate content.
+Here, we provide a simple example  to demonstrate how to use MiniMax-Text-01 and MiniMax-VL-01 respectively
+### MiniMax-Text-01
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig, QuantoConfig, GenerationConfig
 
@@ -206,6 +245,92 @@ generated_ids = [
 response = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
 ```
 
+### MiniMax-VL-01
+```python
+from transformers import AutoModelForCausalLM, AutoProcessor, AutoConfig, QuantoConfig, GenerationConfig
+import torch
+import json
+import os
+from PIL import Image
+
+# load hf config
+hf_config = AutoConfig.from_pretrained("MiniMaxAI/MiniMax-VL-01", trust_remote_code=True)
+
+# quantization config, int8 is recommended
+quantization_config =  QuantoConfig(
+            weights="int8",
+            modules_to_not_convert=[
+                "vision_tower",
+                "image_newline",
+                "multi_modal_projector",
+                "lm_head",
+                "embed_tokens",
+            ] + [f"model.layers.{i}.coefficient" for i in range(hf_config.text_config.num_hidden_layers)]
+            + [f"model.layers.{i}.block_sparse_moe.gate" for i in range(hf_config.text_config.num_hidden_layers)]
+        )
+
+# set device map
+model_safetensors_index_path = os.path.join("MiniMax-VL-01", "model.safetensors.index.json")
+with open(model_safetensors_index_path, "r") as f:
+    model_safetensors_index = json.load(f)
+weight_map = model_safetensors_index['weight_map']
+vision_map = {}
+for key, value in weight_map.items():
+    if 'vision_tower' in key or 'image_newline' in key or 'multi_modal_projector' in key:
+        new_key = key.replace('.weight','').replace('.bias','')
+        if new_key not in vision_map:
+            vision_map[new_key] = value
+# assume 8 GPUs
+world_size = 8
+device_map = {
+    'language_model.model.embed_tokens': 'cuda:0',
+    'language_model.model.norm': f'cuda:{world_size - 1}',
+    'language_model.lm_head': f'cuda:{world_size - 1}'
+}
+for key, value in vision_map.items():
+    device_map[key] = f'cuda:0'
+device_map['vision_tower.vision_model.post_layernorm'] = f'cuda:0'
+layers_per_device = hf_config.text_config.num_hidden_layers // world_size
+for i in range(world_size):
+    for j in range(layers_per_device):
+        device_map[f'language_model.model.layers.{i * layers_per_device + j}'] = f'cuda:{i}'
+
+# load processor
+processor = AutoProcessor.from_pretrained("MiniMaxAI/MiniMax-VL-01", trust_remote_code=True)
+messages = [
+    {"role": "system", "content": [{"type": "text", "text": "You are a helpful assistant created by MiniMax based on MiniMax-VL-01 model."}]},
+    {"role": "user", "content": [{"type": "image", "image": "placeholder"},{"type": "text", "text": "Describe this image."}]},
+]
+prompt = processor.tokenizer.apply_chat_template(
+    messages, tokenize=False, add_generation_prompt=True
+)
+raw_image = Image.open("figures/image.jpg")
+# tokenize and move to device
+model_inputs = processor(images=[raw_image], text=prompt, return_tensors='pt').to('cuda').to(torch.bfloat16)
+
+# load bfloat16 model, move to device, and apply quantization
+quantized_model = AutoModelForCausalLM.from_pretrained(
+    "MiniMaxAI/MiniMax-VL-01",
+    torch_dtype="bfloat16",
+    device_map=device_map,
+    quantization_config=quantization_config,
+    trust_remote_code=True,
+    offload_buffers=True,
+)
+generation_config = GenerationConfig(
+    max_new_tokens=100,
+    eos_token_id=200020,
+    use_cache=True,
+)
+
+# generate response
+generated_ids = quantized_model.generate(**model_inputs, generation_config=generation_config)
+print(f"generated_ids: {generated_ids}")
+generated_ids = [
+    output_ids[len(input_ids):] for input_ids, output_ids in zip(model_inputs.input_ids, generated_ids)
+]
+response = processor.tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
+```
 ## 5. Citation
 
 ```
