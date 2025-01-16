@@ -193,15 +193,15 @@ quantization_config =  QuantoConfig(
             + [f"model.layers.{i}.block_sparse_moe.gate" for i in range(hf_config.num_hidden_layers)]
         )
 
+# assume 8 GPUs
+world_size = 8
+layers_per_device = hf_config.num_hidden_layers // world_size
 # set device map
 device_map = {
     'model.embed_tokens': 'cuda:0',
     'model.norm': f'cuda:{world_size - 1}',
     'lm_head': f'cuda:{world_size - 1}'
 }
-# assume 8 GPUs
-world_size = 8
-layers_per_device = hf_config.num_hidden_layers // world_size
 for i in range(world_size):
     for j in range(layers_per_device):
         device_map[f'model.layers.{i * layers_per_device + j}'] = f'cuda:{i}'
