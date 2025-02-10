@@ -15,7 +15,7 @@
     <img alt="Paper" src="https://img.shields.io/badge/📖_Paper-MiniMax--01-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/>
   </a>
   <a href="https://huggingface.co/MiniMaxAI" target="_blank" style="margin: 2px;">
-    <img alt="Hugging Face" src="https://img.shields.io/badge/🤗_Hugging_Face-MinMax-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/>
+    <img alt="Hugging Face" src="https://img.shields.io/badge/🤗_Hugging_Face-MiniMax-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/>
   </a>
 </div>
 <div align="center" style="line-height: 1;">
