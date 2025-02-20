@@ -346,6 +346,6 @@ response = processor.tokenizer.batch_decode(generated_ids, skip_special_tokens=T
 ```
 
 ## 6. Chatbot & API
-For general use and evaluation, we provide a [Chatbot](https://www.hailuo.ai/) with online search capabilities and the [online API](https://intl.minimaxi.com) for developers.
+For general use and evaluation, we provide a [Chatbot](https://chat.minimax.io/) with online search capabilities and the [online API](https://intl.minimaxi.com) for developers.
 
 Contact us at [model@minimaxi.com](mailto:model@minimaxi.com).
