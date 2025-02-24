@@ -8,27 +8,33 @@
 <hr>
 
 <div align="center" style="line-height: 1;">
-  <a href="https://www.minimaxi.com/en" target="_blank" style="margin: 2px;">
+  <a href="https://www.minimaxi.com/en" target="_blank" style="margin: 2px; color: var(--fgColor-default);">
     <img alt="Homepage" src="https://img.shields.io/badge/_Homepage-MiniMax-FF4040?style=flat-square&labelColor=2C3E50&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNDkwLjE2IDQxMS43Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9PC9zdHlsZT48L2RlZnM+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjMzLjQ1LDQwLjgxYTE3LjU1LDE3LjU1LDAsMSwwLTM1LjEsMFYzMzEuNTZhNDAuODIsNDAuODIsMCwwLDEtODEuNjMsMFYxNDVhMTcuNTUsMTcuNTUsMCwxLDAtMzUuMDksMHY3OS4wNmE0MC44Miw0MC44MiwwLDAsMS04MS42MywwVjE5NS40MmExMS42MywxMS42MywwLDAsMSwyMy4yNiwwdjI4LjY2YTE3LjU1LDE3LjU1LDAsMCwwLDM1LjEsMFYxNDVBNDAuODIsNDAuODIsMCwwLDEsMTQwLDE0NVYzMzEuNTZhMTcuNTUsMTcuNTUsMCwwLDAsMzUuMSwwVjIxNy41aDBWNDAuODFhNDAuODEsNDAuODEsMCwxLDEsODEuNjIsMFYyODEuNTZhMTEuNjMsMTEuNjMsMCwxLDEtMjMuMjYsMFptMjE1LjksNjMuNEE0MC44Niw0MC44NiwwLDAsMCw0MDguNTMsMTQ1VjMwMC44NWExNy41NSwxNy41NSwwLDAsMS0zNS4wOSwwdi0yNjBhNDAuODIsNDAuODIsMCwwLDAtODEuNjMsMFYzNzAuODlhMTcuNTUsMTcuNTUsMCwwLDEtMzUuMSwwVjMzMGExMS42MywxMS42MywwLDEsMC0yMy4yNiwwdjQwLjg2YTQwLjgxLDQwLjgxLDAsMCwwLDgxLjYyLDBWNDAuODFhMTcuNTUsMTcuNTUsMCwwLDEsMzUuMSwwdjI2MGE0MC44Miw0MC44MiwwLDAsMCw4MS42MywwVjE0NWExNy41NSwxNy41NSwwLDEsMSwzNS4xLDBWMjgxLjU2YTExLjYzLDExLjYzLDAsMCwwLDIzLjI2LDBWMTQ1QTQwLjg1LDQwLjg1LDAsMCwwLDQ0OS4zNSwxMDQuMjFaIi8+PC9zdmc+&logoWidth=20" style="display: inline-block; vertical-align: middle;"/>
   </a>
   <a href="https://arxiv.org/abs/2501.08313" target="_blank" style="margin: 2px;">
     <img alt="Paper" src="https://img.shields.io/badge/📖_Paper-MiniMax--01-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/>
   </a>
-  <a href="https://huggingface.co/MiniMaxAI" target="_blank" style="margin: 2px;">
-    <img alt="Hugging Face" src="https://img.shields.io/badge/🤗_Hugging_Face-MiniMax-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/>
-  </a>
-</div>
-<div align="center" style="line-height: 1;">
-  <a href="https://www.hailuo.ai/" target="_blank" style="margin: 2px;">
-    <img alt="Chat" src="https://img.shields.io/badge/Chat-_Hailuo AI-FF4040?style=flat-square&labelColor=2C3E50&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMzc1LjE0IDM3NS4xNCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOnVybCgjdW5uYW1lZC1ncmFkaWVudCk7fTwvc3R5bGU+PGxpbmVhckdyYWRpZW50IGlkPSJ1bm5hbWVkLWdyYWRpZW50IiB4MT0iOC40MiIgeTE9IjEzLjgxIiB4Mj0iNDI5LjY1IiB5Mj0iNDIyLjM3IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwLjA5IiBzdG9wLWNvbG9yPSIjZmZhYjBjIi8+PHN0b3Agb2Zmc2V0PSIwLjMxIiBzdG9wLWNvbG9yPSIjZmY1NTM4Ii8+PHN0b3Agb2Zmc2V0PSIwLjQ2IiBzdG9wLWNvbG9yPSIjZTk0MDVkIi8+PHN0b3Agb2Zmc2V0PSIwLjc1IiBzdG9wLWNvbG9yPSIjZDI2NmRhIi8+PHN0b3Agb2Zmc2V0PSIwLjg5IiBzdG9wLWNvbG9yPSIjZDU4NGVmIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMzc1LjE0LDE4Ny41N0MzNzUuMTQsODQsMjkwLjc0LS4yNiwxODcuMDksMCw4NC4yNi4yNi4yNiw4NC4yNSwwLDE4Ny4wOWMtLjI2LDEwMy42NSw4NCwxODgsMTg3LjU3LDE4OEgzMTAuODJBNjQuMjEsNjQuMjEsMCwwLDAsMzc1LDMxMC45M1YxOTMuODJoMEMzNzUuMDksMTkxLjc5LDM3NS4xNCwxODkuNjcsMzc1LjE0LDE4Ny41N1ptLTI4NCwxMDQuMTdjLTI5Ljg2LTI1LjQ5LTQ4LjI2LTY2LjI3LTQ3LjQtMTA3Ljg1cS4wOS00LjM4LjQ2LTguNzNWMTc1YzQuMzItNDkuNiwzNi4zNy05NS44OCw4MS4yOS0xMTcuMzZTMjI2LjUyLDQwLjIxLDI2Ny44NSw2OHM2Ni4zMiw3OC4yMSw2My40LDEyNy45MmExNzgsMTc4LDAsMCwxLTUuMTQsMzIuMjVjLTEsNC4yLTIuMyw4LjU3LTUuMjgsMTEuNzJzLTguMiw0LjYtMTEuNzMsMi4wOWMtMy4zNy0yLjQxLTMuODctNy4xMi00LjE2LTExLjI1LTIuMzMtMzMuMzctMTEuMjQtNjcuNzYtMzMuNzktOTIuNDdhMTAzLjY3LDEwMy42NywwLDAsMC02Ni4zOC0zMi44NEExMDcuMTksMTA3LjE5LDAsMCwwLDEzMy4yMiwxMjVDMTE2LDEzNy4yNywxMDIuNTUsMTU0Ljg4LDk2LDE3NXMtNS44Niw0Mi42MSwyLjcxLDYxLjkzYTgxLjg5LDgxLjg5LDAsMCwwLDI5LjcxLDM1YzIyLjk0LDE1LjA2LDU0LjMxLDE3LjIsNzguMTQsMy42czM4LjA3LTQzLjEsMzItNjkuODZTMjA1LjQsMTU4LDE3OC4xMSwxNjAuODRjLTQuMTYuNDMtMTAuMTMsMC0xMC4yOC00LjIxLS4xMi0zLjI0LDMuNzctNC45NCw3LTUuNTIsMjcuNjgtNSw1Ny4zNCw5LjA5LDcyLjUzLDMyLjc3czE2LDU1LjQxLDMuNTYsODAuNjYtMzcsNDMuNjktNjQuMzYsNTAuMzVDMTQ5LjY4LDMyMy44NywxMTYuMzEsMzEzLjI1LDkxLjExLDI5MS43NFoiLz48L3N2Zz4=&logoWidth=16" style="display: inline-block; vertical-align: middle;"/>
+   <a href="https://chat.minimax.io/" target="_blank" style="margin: 2px;">
+    <img alt="Chat" src="https://img.shields.io/badge/_MiniMax_Chat-FF4040?style=flat-square&labelColor=2C3E50&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNDkwLjE2IDQxMS43Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9PC9zdHlsZT48L2RlZnM+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjMzLjQ1LDQwLjgxYTE3LjU1LDE3LjU1LDAsMSwwLTM1LjEsMFYzMzEuNTZhNDAuODIsNDAuODIsMCwwLDEtODEuNjMsMFYxNDVhMTcuNTUsMTcuNTUsMCwxLDAtMzUuMDksMHY3OS4wNmE0MC44Miw0MC44MiwwLDAsMS04MS42MywwVjE5NS40MmExMS42MywxMS42MywwLDAsMSwyMy4yNiwwdjI4LjY2YTE3LjU1LDE3LjU1LDAsMCwwLDM1LjEsMFYxNDVBNDAuODIsNDAuODIsMCwwLDEsMTQwLDE0NVYzMzEuNTZhMTcuNTUsMTcuNTUsMCwwLDAsMzUuMSwwVjIxNy41aDBWNDAuODFhNDAuODEsNDAuODEsMCwxLDEsODEuNjIsMFYyODEuNTZhMTEuNjMsMTEuNjMsMCwxLDEtMjMuMjYsMFptMjE1LjksNjMuNEE0MC44Niw0MC44NiwwLDAsMCw0MDguNTMsMTQ1VjMwMC44NWExNy41NSwxNy41NSwwLDAsMS0zNS4wOSwwdi0yNjBhNDAuODIsNDAuODIsMCwwLDAtODEuNjMsMFYzNzAuODlhMTcuNTUsMTcuNTUsMCwwLDEtMzUuMSwwVjMzMGExMS42MywxMS42MywwLDEsMC0yMy4yNiwwdjQwLjg2YTQwLjgxLDQwLjgxLDAsMCwwLDgxLjYyLDBWNDAuODFhMTcuNTUsMTcuNTUsMCwwLDEsMzUuMSwwdjI2MGE0MC44Miw0MC44MiwwLDAsMCw4MS42MywwVjE0NWExNy41NSwxNy41NSwwLDEsMSwzNS4xLDBWMjgxLjU2YTExLjYzLDExLjYzLDAsMCwwLDIzLjI2LDBWMTQ1QTQwLjg1LDQwLjg1LDAsMCwwLDQ0OS4zNSwxMDQuMjFaIi8+PC9zdmc+&logoWidth=20" style="display: inline-block; vertical-align: middle;"/>
   </a>
   <a href="https://intl.minimaxi.com" style="margin: 2px;">
     <img alt="API" src="https://img.shields.io/badge/⚡_API-Platform-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/>
+  </a>  
+</div>
+<div align="center" style="line-height: 1;">
+  <a href="https://huggingface.co/MiniMaxAI" target="_blank" style="margin: 2px;">
+    <img alt="Hugging Face" src="https://img.shields.io/badge/🤗_Hugging_Face-MiniMax-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/>
+  </a>
+  <a href="https://github.com/MiniMax-AI/MiniMax-01/blob/main/figures/wechat-qrcode.jpeg" target="_blank" style="margin: 2px;">
+    <img alt="WeChat" src="https://img.shields.io/badge/_WeChat-MiniMax-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/>
   </a>
 </div>
 <div align="center" style="line-height: 1;">
-  <a href="https://github.com/MiniMax-AI/MiniMax-01/blob/main/LICENSE" style="margin: 2px;">
-    <img alt="License" src="https://img.shields.io/badge/📜_License-Model_Agreement-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/>
+  <a href="https://github.com/MiniMax-AI/MiniMax-01/blob/main/LICENSE-MODEL" style="margin: 2px;">
+    <img alt="Model License" src="https://img.shields.io/badge/_Model_License-Model_Agreement-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/>
+  </a>
+   <a href="https://github.com/MiniMax-AI/MiniMax-01/blob/main/LICENSE-CODE" style="margin: 2px;">
+    <img alt="Code License" src="https://img.shields.io/badge/_Code_License-MIT-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/>
   </a>
 </div>
 
@@ -174,6 +180,6 @@ response = processor.tokenizer.batch_decode(generated_ids, skip_special_tokens=T
 ```
 
 ## 5. Chatbot & API
-For general use and evaluation, we provide a [Chatbot](https://www.hailuo.ai/) with online search capabilities and the [online API](https://intl.minimaxi.com) for developers.
+For general use and evaluation, we provide a [Chatbot](https://chat.minimax.io/) with online search capabilities and the [online API](https://intl.minimaxi.com) for developers.
 
 Contact us at [model@minimaxi.com](mailto:model@minimaxi.com).
