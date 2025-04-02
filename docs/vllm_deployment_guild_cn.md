@@ -87,7 +87,7 @@ pip install vllm
 
 ```bash
 export SAFETENSORS_FAST_GPU=1
-export VLLM_ATTENTION_BACKEND=TORCH_SDPA
+export VLLM_USE_V1=0
 
 python3 -m vllm.entrypoints.api_server \
 --model <模型存放路径> \
