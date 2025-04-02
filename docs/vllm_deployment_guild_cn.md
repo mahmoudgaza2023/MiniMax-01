@@ -39,6 +39,12 @@ git clone https://huggingface.co/MiniMaxAI/MiniMax-Text-01
 
 为确保部署环境的一致性和稳定性，我们推荐使用 Docker 进行部署。
 
+⚠️ **版本要求**：
+- MiniMax-Text-01 模型需要 vLLM 0.8.3 或更高版本才能获得完整支持
+- 如果您使用的 Docker 镜像中的 vLLM 版本低于 0.8.3（在编写本文档时该版本尚未发布），您需要：
+  1. 更新到最新的 vLLM 代码
+  2. 从源码重新编译 vLLM，按照"常见问题"部分中解决方案二的说明进行编译
+
 1. 获取容器镜像：
 ```bash
 docker pull vllm/vllm-openai:v0.7.1
