@@ -44,7 +44,7 @@
 ## 1. Introduction
 We are delighted to introduce two remarkable models, **MiniMax-Text-01** and **MiniMax-VL-01**.
 MiniMax-Text-01 is a powerful language model boasting 456 billion total parameters, with 45.9 billion activated per token. To unlock its long-context capabilities, it adopts a hybrid architecture integrating Lightning Attention, Softmax Attention, and Mixture-of-Experts (MoE). Leveraging advanced parallel strategies like Linear Attention Sequence Parallelism Plus (LASP+), varlen ring attention, and Expert Tensor Parallel (ETP), its training context length extends to 1 million tokens, and it can handle up to 4 million tokens during inference. Consequently, MiniMax-Text-01 showcases top-tier performance on various academic benchmarks.
-Building on MiniMax-Text-01's prowess, we developed MiniMax-VL-01 for enhanced visual capabilities. It uses the “ViT-MLP-LLM” framework common in multimodal LLMs. It is initialized and trained using three key components: a 303-million-parameter Vision Transformer (ViT) for visual encoding, a randomly initialized two-layer MLP projector for image adaptation, and MiniMax-Text-01 as the base LLM. This model features a dynamic resolution mechanism. Input images are resized according to a pre-set grid, with resolutions ranging from 336×336 to 2016×2016, while maintaining a 336×336 thumbnail. The resized images are split into non - overlapping patches of the same size. These patches and the thumbnail are encoded separately and then combined to form a full image representation. As a result, MiniMax-VL-01 has achieved top-level performance on multimodal leaderboards, demonstrating its edge in complex multimodal tasks.
+Building on MiniMax-Text-01's prowess, we developed MiniMax-VL-01 for enhanced visual capabilities. It uses the "ViT-MLP-LLM" framework common in multimodal LLMs. It is initialized and trained using three key components: a 303-million-parameter Vision Transformer (ViT) for visual encoding, a randomly initialized two-layer MLP projector for image adaptation, and MiniMax-Text-01 as the base LLM. This model features a dynamic resolution mechanism. Input images are resized according to a pre-set grid, with resolutions ranging from 336×336 to 2016×2016, while maintaining a 336×336 thumbnail. The resized images are split into non - overlapping patches of the same size. These patches and the thumbnail are encoded separately and then combined to form a full image representation. As a result, MiniMax-VL-01 has achieved top-level performance on multimodal leaderboards, demonstrating its edge in complex multimodal tasks.
 
 <p align="center">
   <img width="100%" src="figures/TextBench.png">
@@ -337,7 +337,19 @@ generated_ids = [
 ]
 response = processor.tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
 ```
-## 5. Citation
+
+## 5. Deployment Guide
+
+For production deployment, we recommend using [vLLM](https://docs.vllm.ai/en/latest/) to serve MiniMax-Text-01. vLLM provides excellent performance for serving large language models with the following features:
+
+- 🔥 Outstanding service throughput performance
+- ⚡ Efficient and intelligent memory management
+- 📦 Powerful batch request processing capability
+- ⚙️ Deeply optimized underlying performance
+
+For detailed deployment instructions, please refer to our [vLLM Deployment Guide](docs/vllm_deployment_guild.md).
+
+## 6. Citation
 
 ```
 @misc{minimax2025minimax01scalingfoundationmodels,
@@ -351,7 +363,7 @@ response = processor.tokenizer.batch_decode(generated_ids, skip_special_tokens=T
 }
 ```
 
-## 6. Chatbot & API
+## 7. Chatbot & API
 For general use and evaluation, we provide a [Chatbot](https://chat.minimax.io/) with online search capabilities and the [online API](https://www.minimax.io/platform) for developers.
 
 Contact us at [model@minimaxi.com](mailto:model@minimaxi.com).
