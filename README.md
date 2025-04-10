@@ -367,6 +367,6 @@ For detailed deployment instructions, please refer to our [vLLM Deployment Guide
 ```
 
 ## 7. Chatbot & API
-For general use and evaluation, we provide a [Chatbot](https://chat.minimax.io/) with online search capabilities and the [online API](https://www.minimax.io/platform) for developers. For general use and evaluation, we provide the [MiniMax MCP Server](https://github.com/MiniMax-AI/MiniMax-MCP) with video generation, speech synthesis, and the voice cloning for developers.
+For general use and evaluation, we provide a [Chatbot](https://chat.minimax.io/) with online search capabilities and the [online API](https://www.minimax.io/platform) for developers. For general use and evaluation, we provide the [MiniMax MCP Server](https://github.com/MiniMax-AI/MiniMax-MCP) with video generation, image generation, speech synthesis, and voice cloning for developers.
 
 Contact us at [model@minimaxi.com](mailto:model@minimaxi.com).
