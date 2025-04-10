@@ -19,7 +19,10 @@
   </a>
   <a href="https://www.minimax.io/platform" style="margin: 2px;">
     <img alt="API" src="https://img.shields.io/badge/⚡_API-Platform-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/>
-  </a>  
+  </a>
+  <a href="https://github.com/MiniMax-AI/MiniMax-MCP" style="margin: 2px;">
+    <img alt="MCP" src="https://img.shields.io/badge/🚀_MCP-MiniMax_MCP-FF4040?style=flat-square&labelColor=2C3E50" style="display: inline-block; vertical-align: middle;"/>
+  </a> 
 </div>
 <div align="center" style="line-height: 1;">
   <a href="https://huggingface.co/MiniMaxAI" target="_blank" style="margin: 2px;">
@@ -364,6 +367,6 @@ For detailed deployment instructions, please refer to our [vLLM Deployment Guide
 ```
 
 ## 7. Chatbot & API
-For general use and evaluation, we provide a [Chatbot](https://chat.minimax.io/) with online search capabilities and the [online API](https://www.minimax.io/platform) for developers.
+For general use and evaluation, we provide a [Chatbot](https://chat.minimax.io/) with online search capabilities and the [online API](https://www.minimax.io/platform) for developers. For general use and evaluation, we provide the [MiniMax MCP Server](https://github.com/MiniMax-AI/MiniMax-MCP) with video generation, speech synthesis, and the voice cloning for developers.
 
 Contact us at [model@minimaxi.com](mailto:model@minimaxi.com).
