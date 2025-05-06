@@ -1,10 +1,10 @@
-# 🚀 MiniMax-Text-01 Model vLLM Deployment Guide
+# 🚀 MiniMax Models vLLM Deployment Guide
 
 [VLLM中文版部署指南](./vllm_deployment_guild_cn.md)
 
 ## 📖 Introduction
 
-We recommend using [vLLM](https://docs.vllm.ai/en/latest/) to deploy the MiniMax-Text-01 model. Based on our testing, vLLM performs excellently when deploying MiniMax-Text-01, with the following features:
+We recommend using [vLLM](https://docs.vllm.ai/en/latest/) to deploy MiniMax series models. Based on our testing, vLLM performs excellently when deploying MiniMax models, with the following features:
 
 - 🔥 Outstanding service throughput performance
 - ⚡ Efficient and intelligent memory management
@@ -13,7 +13,11 @@ We recommend using [vLLM](https://docs.vllm.ai/en/latest/) to deploy the MiniMax
 
 The MiniMax-Text-01 model can run efficiently on a single server equipped with 8 H800 or 8 H20 GPUs. In terms of hardware configuration, a server with 8 H800 GPUs can process context inputs up to 2 million tokens, while a server equipped with 8 H20 GPUs can support ultra-long context processing capabilities of up to 5 million tokens.
 
-## 💾 Obtaining the MiniMax-Text-01 Model
+The MiniMax-VL-01 model can also run efficiently on a single server with 8 H800 or 8 H20 GPUs, providing powerful multimodal capabilities.
+
+## 💾 Obtaining MiniMax Models
+
+### Obtaining MiniMax-Text-01 Model
 
 You can download the model from our official HuggingFace repository: [MiniMax-Text-01](https://huggingface.co/MiniMaxAI/MiniMax-Text-01)
 
@@ -33,6 +37,26 @@ git lfs install
 git clone https://huggingface.co/MiniMaxAI/MiniMax-Text-01
 ```
 
+### Obtaining MiniMax-VL-01 Model
+
+You can download the model from our official HuggingFace repository: [MiniMax-VL-01](https://huggingface.co/MiniMaxAI/MiniMax-VL-01)
+
+Download command:
+```
+pip install -U huggingface-hub
+huggingface-cli download MiniMaxAI/MiniMax-VL-01
+
+# If you encounter network issues, you can set a proxy
+export HF_ENDPOINT=https://hf-mirror.com
+```
+
+Or download using git:
+
+```bash
+git lfs install
+git clone https://huggingface.co/MiniMaxAI/MiniMax-VL-01
+```
+
 ⚠️ **Important Note**: Please ensure that [Git LFS](https://git-lfs.github.com/) is installed on your system, which is necessary for completely downloading the model weight files.
 
 ## 🛠️ Deployment Options
@@ -42,7 +66,7 @@ git clone https://huggingface.co/MiniMaxAI/MiniMax-Text-01
 To ensure consistency and stability of the deployment environment, we recommend using Docker for deployment.
 
 ⚠️ **Version Requirements**: 
-- The MiniMax-Text-01 model requires vLLM version 0.8.3 or later for full support
+- MiniMax series models require vLLM version 0.8.3 or later for full support
 - If you are using a Docker image with vLLM version lower than 0.8.3 (which was not yet released at the time of writing this document), you will need to:
   1. Update to the latest vLLM code
   2. Recompile vLLM from source. Follow the compilation instructions in Solution 2 of the Common Issues section
@@ -106,6 +130,25 @@ python3 -m vllm.entrypoints.api_server \
 --dtype bfloat16
 ```
 
+### Launch MiniMax-VL-01 Service
+
+```bash
+export SAFETENSORS_FAST_GPU=1
+export VLLM_USE_V1=0
+
+python3 -m vllm.entrypoints.api_server \
+--model <model storage path> \
+--tensor-parallel-size 8 \
+--trust-remote-code \
+--quantization experts_int8  \
+--max_model_len 2048 \
+--dtype bfloat16 \
+--gpu-memory-utilization 0.8 \
+--max_num_seqs 8 \
+--enable-chunked-prefill \
+--max-num-batched-tokens 512
+```
+
 ### API Call Example
 
 ```bash
@@ -131,7 +174,7 @@ ModuleNotFoundError: No module named 'vllm._C'
 Or
 
 ```
-MiniMax-Text-01 model is not currently supported
+MiniMax model is not currently supported
 ```
 
 We provide two solutions:
@@ -156,11 +199,11 @@ pip install -e .
 
 ## 📮 Getting Support
 
-If you encounter any issues while deploying MiniMax-Text-01:
+If you encounter any issues while deploying MiniMax models:
 - Please check our official documentation
 - Contact our technical support team through official channels
-- Submit an [Issue](https://github.com/MiniMaxAI/MiniMax-Text-01/issues) on our GitHub repository
+- Submit an [Issue](https://github.com/MiniMax-AI/MiniMax-01/issues) on our GitHub repository
 
-We will continuously optimize the deployment experience of MiniMax-Text-01 and welcome your feedback!
+We will continuously optimize the deployment experience of MiniMax models and welcome your feedback!
 
 
