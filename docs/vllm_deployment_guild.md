@@ -4,7 +4,7 @@
 
 ## 📖 Introduction
 
-We recommend using [vLLM](https://docs.vllm.ai/en/latest/) to deploy MiniMax series models. Based on our testing, vLLM performs excellently when deploying MiniMax models, with the following features:
+We recommend using [vLLM](https://docs.vllm.ai/en/latest/) to deploy MiniMax-Text-01 and MiniMax-VL-01 models. Based on our testing, vLLM performs excellently when deploying these two models, with the following features:
 
 - 🔥 Outstanding service throughput performance
 - ⚡ Efficient and intelligent memory management
@@ -66,8 +66,9 @@ git clone https://huggingface.co/MiniMaxAI/MiniMax-VL-01
 To ensure consistency and stability of the deployment environment, we recommend using Docker for deployment.
 
 ⚠️ **Version Requirements**: 
-- MiniMax series models require vLLM version 0.8.3 or later for full support
-- If you are using a Docker image with vLLM version lower than 0.8.3 (which was not yet released at the time of writing this document), you will need to:
+- MiniMax-Text-01 model requires vLLM version 0.8.3 or later for full support
+- MiniMax-VL-01 model requires vLLM version 0.8.6 or later for full support
+- If you are using a Docker image with vLLM version lower than the required version, you will need to:
   1. Update to the latest vLLM code
   2. Recompile vLLM from source. Follow the compilation instructions in Solution 2 of the Common Issues section
 
@@ -174,7 +175,7 @@ ModuleNotFoundError: No module named 'vllm._C'
 Or
 
 ```
-MiniMax model is not currently supported
+MiniMax-Text-01 or MiniMax-VL-01 model is not currently supported
 ```
 
 We provide two solutions:
@@ -199,11 +200,11 @@ pip install -e .
 
 ## 📮 Getting Support
 
-If you encounter any issues while deploying MiniMax models:
+If you encounter any issues while deploying MiniMax-Text-01 or MiniMax-VL-01 models:
 - Please check our official documentation
 - Contact our technical support team through official channels
 - Submit an [Issue](https://github.com/MiniMax-AI/MiniMax-01/issues) on our GitHub repository
 
-We will continuously optimize the deployment experience of MiniMax models and welcome your feedback!
+We will continuously optimize the deployment experience of these two models and welcome your feedback!
 
 

@@ -2,7 +2,7 @@
 
 ## 📖 简介
 
-我们推荐使用 [vLLM](https://docs.vllm.ai/en/latest/) 来部署 MiniMax 系列模型。经过我们的测试，vLLM 在部署 MiniMax 模型时表现出色，具有以下特点：
+我们推荐使用 [vLLM](https://docs.vllm.ai/en/latest/) 来部署 MiniMax-Text-01 和 MiniMax-VL-01 模型。经过我们的测试，vLLM 在部署这两个模型时表现出色，具有以下特点：
 
 - 🔥 卓越的服务吞吐量性能
 - ⚡ 高效智能的内存管理机制
@@ -64,8 +64,9 @@ git clone https://huggingface.co/MiniMaxAI/MiniMax-VL-01
 为确保部署环境的一致性和稳定性，我们推荐使用 Docker 进行部署。
 
 ⚠️ **版本要求**：
-- MiniMax 系列模型需要 vLLM 0.8.3 或更高版本才能获得完整支持
-- 如果您使用的 Docker 镜像中的 vLLM 版本低于 0.8.3（在编写本文档时该版本尚未发布），您需要：
+- MiniMax-Text-01 模型需要 vLLM 0.8.3 或更高版本才能获得完整支持
+- MiniMax-VL-01 模型需要 vLLM 0.8.6 或更高版本才能获得完整支持
+- 如果您使用的 Docker 镜像中的 vLLM 版本低于所需版本，您需要：
   1. 更新到最新的 vLLM 代码
   2. 从源码重新编译 vLLM，按照"常见问题"部分中解决方案二的说明进行编译
 
@@ -172,7 +173,7 @@ ModuleNotFoundError: No module named 'vllm._C'
 或
 
 ```
-当前并不支持 MiniMax 模型
+当前并不支持 MiniMax-Text-01 或 MiniMax-VL-01 模型
 ```
 
 我们提供两种解决方案：
@@ -197,11 +198,11 @@ pip install -e .
 
 ## 📮 获取支持
 
-如果您在部署 MiniMax 模型过程中遇到任何问题：
+如果您在部署 MiniMax-Text-01 或 MiniMax-VL-01 模型过程中遇到任何问题：
 - 请查看我们的官方文档
 - 通过官方渠道联系我们的技术支持团队
 - 在我们的 GitHub 仓库提交 [Issue](https://github.com/MiniMax-AI/MiniMax-01/issues)
 
-我们会持续优化 MiniMax 模型的部署体验，欢迎您的反馈！
+我们会持续优化这两个模型的部署体验，欢迎您的反馈！
 
 
