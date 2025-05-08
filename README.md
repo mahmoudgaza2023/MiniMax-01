@@ -343,7 +343,7 @@ response = processor.tokenizer.batch_decode(generated_ids, skip_special_tokens=T
 
 ## 5. Deployment Guide
 
-For production deployment, we recommend using [vLLM](https://docs.vllm.ai/en/latest/) to serve MiniMax-Text-01. vLLM provides excellent performance for serving large language models with the following features:
+For production deployment, we recommend using [vLLM](https://docs.vllm.ai/en/latest/) to serve MiniMax-Text-01 and MiniMax-VL-01. vLLM provides excellent performance for serving large language models with the following features:
 
 - 🔥 Outstanding service throughput performance
 - ⚡ Efficient and intelligent memory management
