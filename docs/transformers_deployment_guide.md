@@ -1,5 +1,7 @@
 # 🚀 MiniMax Model Transformers Deployment Guide
 
+[中文 Transformers 部署指南](./transformers_deployment_guide_cn.md)
+
 ## 📖 Introduction
 
 This guide will help you deploy the MiniMax-Text-01 model using the [Transformers](https://huggingface.co/docs/transformers/index) library. Transformers is a widely used deep learning library that provides a rich collection of pre-trained models and flexible model operation interfaces with the following features:
