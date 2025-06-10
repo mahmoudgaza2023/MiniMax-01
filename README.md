@@ -184,7 +184,8 @@ For MiniMax-VL-01, the additional ViT architecture details is as follows:
 
 
 ## 4. Quickstart
-Here, we provide a simple example  to demonstrate how to use MiniMax-Text-01 and MiniMax-VL-01 respectively
+Here, we provide a simple example  to demonstrate how to use MiniMax-Text-01 and MiniMax-VL-01 respectively.
+
 ### MiniMax-Text-01
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig, QuantoConfig, GenerationConfig
@@ -350,7 +351,9 @@ For production deployment, we recommend using [vLLM](https://docs.vllm.ai/en/lat
 - 📦 Powerful batch request processing capability
 - ⚙️ Deeply optimized underlying performance
 
-For detailed deployment instructions, please refer to our [vLLM Deployment Guide](docs/vllm_deployment_guide.md).
+For detailed vLLM deployment instructions, please refer to our [vLLM Deployment Guide](docs/vllm_deployment_guide.md).
+
+Alternatively, you can also deploy using Transformers directly. For detailed Transformers deployment instructions, you can see our [MiniMax-Text-01 Transformers Deployment Guide](docs/transformers_deployment_guide.md).
 
 ## 6. Citation
 
