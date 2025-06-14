@@ -259,8 +259,6 @@ response = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
 ```python
 from transformers import AutoModelForCausalLM, AutoProcessor, AutoConfig, QuantoConfig, GenerationConfig
 import torch
-import json
-import os
 from PIL import Image
 
 # load hf config
@@ -279,27 +277,17 @@ quantization_config =  QuantoConfig(
             + [f"model.layers.{i}.block_sparse_moe.gate" for i in range(hf_config.text_config.num_hidden_layers)]
         )
 
-# set device map
-model_safetensors_index_path = os.path.join("MiniMax-VL-01", "model.safetensors.index.json")
-with open(model_safetensors_index_path, "r") as f:
-    model_safetensors_index = json.load(f)
-weight_map = model_safetensors_index['weight_map']
-vision_map = {}
-for key, value in weight_map.items():
-    if 'vision_tower' in key or 'image_newline' in key or 'multi_modal_projector' in key:
-        new_key = key.replace('.weight','').replace('.bias','')
-        if new_key not in vision_map:
-            vision_map[new_key] = value
 # assume 8 GPUs
 world_size = 8
+# set device map
 device_map = {
+    "vision_tower": "cuda:0",
+    "image_newline": "cuda:0",
+    "multi_modal_projector": "cuda:0",
     'language_model.model.embed_tokens': 'cuda:0',
     'language_model.model.norm': f'cuda:{world_size - 1}',
     'language_model.lm_head': f'cuda:{world_size - 1}'
 }
-for key, value in vision_map.items():
-    device_map[key] = f'cuda:0'
-device_map['vision_tower.vision_model.post_layernorm'] = f'cuda:0'
 layers_per_device = hf_config.text_config.num_hidden_layers // world_size
 for i in range(world_size):
     for j in range(layers_per_device):
